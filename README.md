@@ -1,2 +1,2 @@
 # Test-repository-
-this is a tesd 
+this is a test text.
