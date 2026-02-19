@@ -3,6 +3,10 @@ this is a test text.
 
 ## A Poem
 
+<p align="center">
+  <img src="poem-banner.svg" alt="The Coder's Poem - where code meets poetry" width="700" />
+</p>
+
 Lines of code like rivers flow,
 Through logic's path they twist and grow,
 Each commit a stepping stone,
