@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revising Your Answer, Using AI Critically, and Preparing for Midterm 2</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --mint: #d4edda;
+      --mint-light: #e8f5e9;
+      --mint-dark: #a5d6a7;
+      --teal: #2e7d5e;
+      --teal-dark: #1b5e3b;
+      --accent: #c0e8d0;
+      --callout-bg: rgba(192, 232, 208, 0.4);
+      --text-dark: #1a3a2a;
+      --text-muted: #4a6a5a;
+    }
+    .reveal {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text-dark);
+    }
+    .reveal h1, .reveal h2, .reveal h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--teal-dark);
+      font-weight: 700;
+    }
+    .reveal h1 { font-size: 2.2em; line-height: 1.15; }
+    .reveal h2 { font-size: 1.6em; margin-bottom: 0.8em; }
+    .reveal h3 { font-size: 1.1em; color: var(--teal); }
+    .reveal p, .reveal li { font-size: 0.72em; line-height: 1.6; color: var(--text-dark); }
+    .reveal strong { color: var(--teal-dark); }
+    .reveal .slides section { padding: 40px; }
+    .reveal .progress span { background: linear-gradient(90deg, var(--teal), var(--mint-dark)) !important; }
+    .reveal .controls button { color: var(--teal) !important; }
+    .reveal .slide-number { color: var(--teal); font-family: 'Inter', sans-serif; font-size: 0.5em; }
+
+    /* Callout box */
+    .callout {
+      background: var(--callout-bg);
+      border-radius: 12px;
+      padding: 1em 1.2em;
+      margin: 0.8em 0;
+      font-size: 0.7em;
+      line-height: 1.5;
+      text-align: left;
+      border-left: 4px solid var(--teal);
+    }
+
+    /* Tag/badge */
+    .tag {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--teal-dark);
+      padding: 0.3em 0.9em;
+      border-radius: 20px;
+      font-size: 0.55em;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    /* Subtitle */
+    .subtitle {
+      font-size: 0.7em !important;
+      color: var(--text-muted) !important;
+      font-weight: 400;
+    }
+
+    /* Card grid */
+    .card-grid {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 0.5em;
+    }
+    .card {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--mint-dark);
+      border-radius: 12px;
+      padding: 0.8em 1em;
+      flex: 1 1 200px;
+      max-width: 280px;
+      text-align: left;
+    }
+    .card h3 { margin: 0 0 0.4em 0; font-size: 0.7em; }
+    .card p { font-size: 0.58em; margin: 0; color: var(--text-muted); }
+
+    /* Numbered steps */
+    .step-num {
+      display: inline-block;
+      background: var(--teal);
+      color: white;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 28px;
+      font-size: 0.55em;
+      font-weight: 600;
+      margin-right: 0.5em;
+      vertical-align: middle;
+    }
+
+    /* Two-column layout */
+    .two-col {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      text-align: left;
+    }
+    .two-col > div { flex: 1; }
+
+    /* Comparison boxes */
+    .compare-box {
+      border-radius: 12px;
+      padding: 0.8em 1em;
+      text-align: left;
+    }
+    .compare-box.weak {
+      background: rgba(255, 200, 200, 0.3);
+      border: 1px solid #e57373;
+    }
+    .compare-box.strong {
+      background: rgba(200, 255, 200, 0.3);
+      border: 1px solid var(--mint-dark);
+    }
+    .compare-box h3 { font-size: 0.7em; margin: 0 0 0.3em 0; }
+    .compare-box p { font-size: 0.58em; margin: 0; }
+
+    /* Quote block */
+    .closing-quote {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 0.75em !important;
+      font-style: italic;
+      color: var(--teal-dark) !important;
+      max-width: 700px;
+      margin: 1em auto 0;
+      line-height: 1.5;
+    }
+
+    /* Author label */
+    .author-label {
+      display: inline-block;
+      background: var(--teal);
+      color: white;
+      padding: 0.2em 0.6em;
+      border-radius: 6px;
+      font-size: 0.5em;
+      font-weight: 600;
+      margin-bottom: 0.5em;
+    }
+
+    /* Tables */
+    .reveal table { font-size: 0.65em; margin: 0 auto; }
+    .reveal table th {
+      background: var(--accent);
+      color: var(--teal-dark);
+      font-weight: 600;
+      padding: 0.5em 1em;
+    }
+    .reveal table td {
+      padding: 0.5em 1em;
+      border-color: var(--mint-dark) !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- SLIDE 1: Title -->
+      <section data-background="linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 30%, #d4edda 60%, #f1f8e9 100%)">
+        <div style="text-align: left; max-width: 800px; margin: 0 auto;">
+          <span class="author-label">Ilaf</span>
+          <h1 style="margin-bottom: 0.3em;">Revising Your Answer, Using AI Critically, and Preparing for Midterm 2</h1>
+          <p class="subtitle">MEG Lecture 16 &middot; 18 March 2026</p>
+          <span class="tag">THEME II &middot; WEEK 8</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: What This Class Was For -->
+      <section data-background="linear-gradient(135deg, #e8f5e9 0%, #d4edda 50%, #c8e6c9 100%)">
+        <h2>What This Class Was For</h2>
+        <div style="max-width: 700px; margin: 0 auto; text-align: left;">
+          <p>This class had one purpose: to turn work you had already done into <strong>better thinking and better writing</strong>.</p>
+          <p>It sat directly inside <strong>Theme II</strong> &mdash; rehearsing the Week 8 question on why the onset of rapid modern economic growth in China was slow, through the lenses of <strong>fiscal capacity</strong> and the <strong>developmental state</strong>.</p>
+          <div class="callout">This was not a break from content. It was part of the content &mdash; and part of your Midterm 2 preparation.</div>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: What We Did in Class -->
+      <section data-background="linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 50%, #d4edda 100%)">
+        <h2>What We Did in Class</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3><span class="step-num">01</span> Revise Your March 17 Answer</h3>
+            <p>Compare your answer with the AI-generated version. Consult it &mdash; don't copy it. Paraphrase, select, delete, and restructure in your own words.</p>
+          </div>
+          <div class="card">
+            <h3><span class="step-num">02</span> Reflect and Discuss</h3>
+            <p>Complete a short reflection and discuss with a classmate. The key question: Do I now understand the problem differently, more precisely, with a clearer framework?</p>
+          </div>
+          <div class="card">
+            <h3><span class="step-num">03</span> Direct Feedback on Strong Answers</h3>
+            <p>The session shifted into substantive discussion of how a strong answer to the "slow onset of MEG in China" question should actually be structured.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: Why the AI Exercise Mattered -->
+      <section data-background="linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #d4edda 100%)">
+        <h2>Why the AI Exercise Mattered</h2>
+        <div style="max-width: 700px; margin: 0 auto; text-align: left;">
+          <p>The course does not treat AI as a machine for producing finished answers. It treats AI as something you must <strong>interrogate, constrain, verify, and improve upon</strong> &mdash; that is how the syllabus defines AI fluency.</p>
+          <div class="two-col" style="margin-top: 0.8em;">
+            <div class="card">
+              <h3>The Real Danger</h3>
+              <p>Generic AI answers sound polished and plausible &mdash; but list factors instead of explaining mechanisms, mix frameworks, and use vague claims where the course expects precise historical-economic reasoning.</p>
+            </div>
+            <div class="card">
+              <h3>What the Exercise Trained</h3>
+              <p>Compare weak vs. strong answers &middot; decide what is irrelevant or too vague &middot; add what is missing &middot; rewrite into a clearer, more defensible argument.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: What Your Reflections Showed -->
+      <section data-background="linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 50%, #d4edda 100%)">
+        <h2>What Your Reflections Showed</h2>
+        <p style="font-size: 0.65em; color: var(--text-muted); margin-bottom: 0.5em;">Five Recurring Themes</p>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Mechanisms, Not Lists</h3>
+            <p>Students moved from listing broad factors to explaining how the high-level equilibrium trap, fiscal capacity, and political economy interact.</p>
+          </div>
+          <div class="card">
+            <h3>Better Structure</h3>
+            <p>Answers became more organised, concise, and logical. Structure is not just style &mdash; it reflects whether concepts are organised in your own mind.</p>
+          </div>
+          <div class="card">
+            <h3>Framework Awareness</h3>
+            <p>Students now see China's slow onset of MEG as the result of interacting material constraints, state weakness, fiscal limits, and political economy &mdash; not a single cause.</p>
+          </div>
+          <div class="card">
+            <h3>More Critical of AI</h3>
+            <p>The AI answer now looks less impressive. Students noticed it focused on the wrong period, used generic language, or missed the course's actual architecture.</p>
+          </div>
+          <div class="card">
+            <h3>A Useful Diagnostic</h3>
+            <p>"I understand the big picture, but need firmer command of concrete historical specifics." &mdash; This tells you exactly what to do before the midterm.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: Architecture of a Strong Answer -->
+      <section data-background="linear-gradient(135deg, #e8f5e9 0%, #d4edda 50%, #c8e6c9 100%)">
+        <h2>The Architecture of a Strong Answer</h2>
+        <p style="font-size: 0.65em; color: var(--text-muted); margin-bottom: 0.6em;">Central question: Why was the onset of modern economic growth in China so slow?</p>
+        <div class="card-grid">
+          <div class="card">
+            <h3><span class="step-num">A</span> High-Level Framing</h3>
+            <p>Reject simplistic narratives. China was not "backward" &mdash; it had markets, commerce, and technology. The issue is why it did not transition into modern economic growth.</p>
+          </div>
+          <div class="card">
+            <h3><span class="step-num">B</span> Material Trap</h3>
+            <p>Labour abundance and relative factor prices meant capital-intensive transformation was not privately profitable. The market was rational &mdash; and still failed to generate MEG.</p>
+          </div>
+          <div class="card">
+            <h3><span class="step-num">C</span> Political-Fiscal Trap</h3>
+            <p>The strongest answers weight this most heavily. Qing and Republican China lacked the fiscal and administrative capacity to finance railways, schooling, or industrial coordination.</p>
+          </div>
+          <div class="card">
+            <h3><span class="step-num">D</span> Trade Is Not a Magic Answer</h3>
+            <p>Without sufficient state capacity, external opening can deepen vulnerability. Trade and foreign technology must be understood within political-economy constraints.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: The Central Claim -->
+      <section data-background="linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #d4edda 100%)">
+        <h2>The Central Claim</h2>
+        <div style="max-width: 700px; margin: 0 auto; text-align: left;">
+          <div class="callout" style="font-size: 0.68em; border-left-width: 5px;">
+            China's private market was not simply failing because people were irrational or anti-development. It was reproducing a stable equilibrium that was rational at the micro level, but insufficient for modern economic growth at the macro-developmental level.
+          </div>
+          <div class="two-col" style="margin-top: 1em;">
+            <div class="compare-box weak">
+              <h3 style="color: #c62828;">Weak Answer</h3>
+              <p>Taiping Rebellion &middot; Opium Wars &middot; Zheng He &middot; treaty ports &middot; Qing weakness &mdash; listed as disconnected facts</p>
+            </div>
+            <div class="compare-box strong">
+              <h3 style="color: var(--teal-dark);">Strong Answer</h3>
+              <p>Weak fiscal capacity + elite resistance limited developmental coordination &rarr; reform attempts remained partial &rarr; historical episodes illustrate this architecture</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: Course Learning Outcomes -->
+      <section data-background="linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 50%, #d4edda 100%)">
+        <h2>Course Learning Outcomes</h2>
+        <p style="font-size: 0.6em; color: var(--text-muted); margin-bottom: 0.5em;">How This Lecture Connected</p>
+        <div class="card-grid">
+          <div class="card">
+            <h3><span class="step-num">1</span> CLO 1 &mdash; Economic Mechanisms</h3>
+            <p>Explain China's slow MEG onset using equilibrium trap, factor prices, fiscal capacity, and developmental-state logic.</p>
+          </div>
+          <div class="card">
+            <h3><span class="step-num">2</span> CLO 2 &mdash; Trade &amp; Industrial Policy</h3>
+            <p>Trade is not automatically developmental; state capacity determines whether external opening helps or deepens vulnerability.</p>
+          </div>
+          <div class="card">
+            <h3><span class="step-num">3</span> CLO 3 &mdash; Identify Frameworks</h3>
+            <p>The AI exercise trained you to notice what kind of explanation you are being given &mdash; geography, culture, institutions, incentives &mdash; and whether it fits the evidence.</p>
+          </div>
+          <div class="card">
+            <h3><span class="step-num">4</span> CLO 4 &mdash; Clear Writing</h3>
+            <p>Revision, peer reflection, and follow-up explanation all targeted structured answers with clearer sentences and explicit mechanisms.</p>
+          </div>
+          <div class="card">
+            <h3><span class="step-num">5</span> CLO 5 &mdash; Critical AI Use</h3>
+            <p>You were asked to compare, diagnose, verify, revise, and synthesise &mdash; not to get AI to produce a polished paragraph.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: Midterm 2 Preparation -->
+      <section data-background="linear-gradient(135deg, #e8f5e9 0%, #d4edda 50%, #c8e6c9 100%)">
+        <h2>Why This Helps You Prepare for Midterm 2</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3><span class="step-num">1</span> Rehearsed the exact question</h3>
+            <p>Worked directly on the central Theme II problem &mdash; not indirect preparation.</p>
+          </div>
+          <div class="card">
+            <h3><span class="step-num">2</span> Taught answer architecture</h3>
+            <p>Many students know relevant material. Fewer know how to organise it. Now you do.</p>
+          </div>
+          <div class="card">
+            <h3><span class="step-num">3</span> Trained description vs. explanation</h3>
+            <p>Midterm 2 rewards explanation. You practised the difference.</p>
+          </div>
+          <div class="card">
+            <h3><span class="step-num">4</span> Sharpened relevance</h3>
+            <p>Not every fact deserves equal weight. Overloading an answer with loosely related material weakens it.</p>
+          </div>
+          <div class="card">
+            <h3><span class="step-num">5</span> Gave you a diagnostic</h3>
+            <p>Your reflection revealed your remaining blind spots &mdash; and told you exactly what to practise next.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: Your Takeaway -->
+      <section data-background="linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 30%, #d4edda 60%, #f1f8e9 100%)">
+        <h2>Your Takeaway</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Revise with Discipline</h3>
+            <p>You can now turn a weak answer into a stronger one &mdash; by cutting, adding, and restructuring with purpose.</p>
+          </div>
+          <div class="card">
+            <h3>Manage AI Critically</h3>
+            <p>AI is useful only when interrogated. Your standard of judgment has improved &mdash; that is the evidence.</p>
+          </div>
+          <div class="card">
+            <h3>Know the Architecture</h3>
+            <p>China's slow MEG onset = interlocking material constraints + political-fiscal weakness + limited developmental-state capacity. Not a single cause.</p>
+          </div>
+          <div class="card">
+            <h3>Revision Is Learning</h3>
+            <p>In this course, revision is not extra work added on top of learning. Revision is one of the main ways learning happens.</p>
+          </div>
+        </div>
+        <p class="closing-quote">"Learning is not just acquiring more information. It is changing the way you judge information. That change in judgment is one of the clearest signs that you are learning."</p>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      center: true,
+      hash: true,
+      transition: 'fade',
+      transitionSpeed: 'slow',
+      slideNumber: true,
+      width: 960,
+      height: 700,
+      margin: 0.04
+    });
+  </script>
+</body>
+</html>
