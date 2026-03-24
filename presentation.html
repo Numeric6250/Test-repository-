@@ -19,7 +19,21 @@
             text-align: center;
             color: #e6edf3;
         }
-        .slide.active { display: flex; }
+        .slide.active { display: flex; animation: fadeSlideIn 0.6s ease-out; }
+
+        /* Animations */
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
 
         /* Slide 1 - Title */
         .slide-1 {
@@ -31,10 +45,12 @@
             background: linear-gradient(90deg, #58a6ff, #bc8cff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: popIn 0.8s ease-out;
         }
         .slide-1 p {
             font-size: 1.5rem;
             color: #8b949e;
+            animation: popIn 1s ease-out 0.3s both;
         }
 
         /* Slide 2 - Content */
@@ -53,6 +69,12 @@
             font-size: 1.4rem;
             line-height: 2.2;
         }
+        .slide-2 ul li {
+            animation: fadeSlideIn 0.5s ease-out both;
+        }
+        .slide-2 ul li:nth-child(1) { animation-delay: 0.2s; }
+        .slide-2 ul li:nth-child(2) { animation-delay: 0.4s; }
+        .slide-2 ul li:nth-child(3) { animation-delay: 0.6s; }
         .slide-2 ul li::before {
             content: "→ ";
             color: #bc8cff;
@@ -65,6 +87,13 @@
         .slide-3 h2 {
             font-size: 3.5rem;
             margin-bottom: 20px;
+        }
+        .slide-3 img {
+            width: 300px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            animation: float 3s ease-in-out infinite;
         }
         .slide-3 p {
             font-size: 1.3rem;
@@ -125,6 +154,7 @@
     <!-- Slide 3: Thank You -->
     <div class="slide slide-3">
         <h2>Thank You!</h2>
+        <img src="sunset.png" alt="A beautiful sunset">
         <p>This presentation lives in your repo as a single HTML file. Use the arrow keys or buttons below to navigate.</p>
     </div>
 
