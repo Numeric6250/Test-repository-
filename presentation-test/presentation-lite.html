@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Presentation Test — Lite</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" />
+  <style>
+    .reveal { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    .reveal h1, .reveal h2 { font-weight: 300; letter-spacing: 0.05em; }
+    .reveal table th,
+    .reveal table td {
+      border-color: rgba(167, 139, 250, 0.3) !important;
+      padding: 0.6em 1.2em;
+    }
+    .reveal table th {
+      background: rgba(167, 139, 250, 0.15);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.85em;
+    }
+    .reveal table tr:nth-child(even) { background: rgba(255, 255, 255, 0.03); }
+    .reveal .progress span { background: linear-gradient(90deg, #a78bfa, #6dd5ed) !important; }
+    .reveal .controls button { color: #a78bfa !important; }
+    .gradient-title {
+      font-size: 2.8em !important;
+      font-weight: 300 !important;
+      letter-spacing: 0.08em !important;
+      background: linear-gradient(90deg, #a78bfa, #818cf8, #6dd5ed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .divider {
+      width: 120px; height: 2px;
+      background: linear-gradient(90deg, #a78bfa, #6dd5ed);
+      margin: 0 auto 1em;
+    }
+    .subtitle { font-size: 1.1em; font-weight: 300; letter-spacing: 0.15em; color: rgba(255,255,255,0.7); }
+    .feature { border-left: 3px solid; padding-left: 1em; margin-bottom: 0.8em; text-align: left; }
+    .feature:nth-child(1) { border-color: #a78bfa; }
+    .feature:nth-child(2) { border-color: #818cf8; }
+    .feature:nth-child(3) { border-color: #6dd5ed; }
+    .summary-note { margin-top: 1.5em; font-style: italic; color: rgba(255,255,255,0.7); }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section data-background-gradient="linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)">
+        <h1 class="gradient-title">PRESENTATION</h1>
+        <div class="divider"></div>
+        <p class="subtitle">TEST DECK</p>
+      </section>
+
+      <section data-background-gradient="linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)">
+        <h2 style="color: #a78bfa; margin-bottom: 1.2em;">Key Features</h2>
+        <div style="max-width: 700px; margin: 0 auto; line-height: 2.2;">
+          <p class="feature"><strong>Fast Setup</strong> — Get started in minutes with a streamlined onboarding process.</p>
+          <p class="feature"><strong>Clear Analytics</strong> — Track performance with real-time dashboards and visual reports.</p>
+          <p class="feature"><strong>Reliable Output</strong> — Consistent, high-quality results you can count on every time.</p>
+        </div>
+      </section>
+
+      <section data-background-gradient="linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)">
+        <h2 style="color: #a78bfa; margin-bottom: 1.2em;">Summary</h2>
+        <table>
+          <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr><td>Slides Created</td><td><strong>3</strong></td></tr>
+            <tr><td>Test Coverage</td><td><strong>100%</strong></td></tr>
+            <tr><td>Issues Found</td><td><strong>0</strong></td></tr>
+          </tbody>
+        </table>
+        <p class="summary-note">Test presentation complete. Everything is working!</p>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      center: true,
+      hash: true,
+      transition: 'fade',
+      transitionSpeed: 'default',
+      slideNumber: true,
+      width: 960,
+      height: 700,
+      margin: 0.04
+    });
+  </script>
+</body>
+</html>
